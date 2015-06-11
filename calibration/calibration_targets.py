@@ -187,32 +187,31 @@ calibration_targets = {
     'AvailableNitrogenSum':      0.76,    #  avln
   },
   ## WARNING: JUNK, PLACEHOLDER VALUES! USE AT YOUR OWN RISK!
-  "gs fen": {							
-    'cmtnumber': 7,							
-	   #	   pft4	   pft5	    pft7	    pft8		
-	   #	 Sedges	  Forbs	 Lichens	 Feather.		
-    'GPPAllIgnoringNitrogen':	   [	257.233741541948,	31.658691380001,	25.6095014727113,	52.6175225557	],	# ingpp     (gC/m2/year)   GPP without N limitation
-    'NPPAllIgnoringNitrogen':	   [	240.513548341722,	29.600876440301,	23.944883876985,	49.1973835895	],	# innpp     (gC/m2/year)   NPP without N limitation
-    'NPPAll':	   		   [	128.61687075,		15.8293456875,		12.804750740625,	26.3087612813	],	# npp       (gC/m2/year)   NPP with N limitation
-    'Nuptake':	   		   [	2.27577864640294,	0.401872873572867,	0.248045993433852,	0.7946957285	],	# nuptake   (gN/m2/year)
-    'VegCarbon': {			
-      'Leaf':			   [	120.80625,	14.868984375,	12.027890625,	24.7126171875	],	# vegcl     (gC/m2)
-      'Stem':			   [	0.0,		0.0,		0.0,		0.0		],	# vegcw     (gC/m2)
-      'Root':	 		   [	210.7875,	95.849203125,	0.0,		0.0		],	# vegcr     (gC/m2)
-    },				
+    "gs fen": {													
+    'cmtnumber': 7,													
+	   #	pft00	pft01	pft02	pft03	pft04	pft05	pft06	pft07	pft08	pft09		
+	   #	 Sedges	  Forbs	 Lichens	 Feather.	pft04	pft05	pft06	pft07	pft08	pft09		
+    'GPPAllIgnoringNitrogen':	   [	257.233741541948,	31.658691380001,	25.6095014727113,	52.6175225556502,	0,	0,	0,	0,	0,	0	],	# ingpp     (gC/m2/year)   GPP without N limitation
+    'NPPAllIgnoringNitrogen':	   [	240.513548341722,	29.600876440301,	23.944883876985,	49.1973835895329,	0,	0,	0,	0,	0,	0	],	# innpp     (gC/m2/year)   NPP without N limitation
+    'NPPAll':	   [	128.61687075,	15.8293456875,	12.804750740625,	26.30876128125,	0,	0,	0,	0,	0,	0	],	# npp       (gC/m2/year)   NPP with N limitation
+    'Nuptake':	   [	2.27577864640294,	0.401872873572867,	0.248045993433852,	0.794695728520637,	0,	0,	0,	0,	0,	0	],	# nuptake   (gN/m2/year)
+    'VegCarbon': {	
+      'Leaf':	   [	120.80625,	14.868984375,	12.027890625,	24.7126171875,	0,	0,	0,	0,	0,	0	],	# vegcl     (gC/m2)
+      'Stem':	   [	0,	0,	0,	0,	0,	0,	0,	0,	0,	0	],	# vegcw     (gC/m2)
+      'Root':	   [	210.7875,	95.849203125,	0,	0,	0,	0,	0,	0,	0,	0	],	# vegcr     (gC/m2)
+    },			
     'VegStructuralNitrogen': {			
-      'Leaf':	 		   [	0.1875,		0.225,		0.590625,	1.40625	],	# vegnl     (gN/m2)
-      'Stem':			   [	0,		0,		0,		0	],	# vegnw     (gN/m2)
-      'Root':			   [	0.1125,		0.16875,	0,		0	],	# vegnr     (gN/m2)
-    },
-    'MossDeathC':               4.68646875,	#dmossc					
-    'CarbonShallow':		23893.48875,	#shlwc					
-    'CarbonDeep':		21677.6878125,	# deepc					
-    'CarbonMineralSum':		26311.5271875,	# minec					
-    'OrganicNitrogenSum':	7445.77125,	# soln					
-    'AvailableNitrogenSum':	0.4122135,	# avln					
-  },							
-
+      'Leaf':	   [	0.1875,	0.225,	0.590625,	1.40625,	0,	0,	0,	0,	0,	0	],	# vegnl     (gN/m2)
+      'Stem':	   [	0,	0,	0,	0,	0,	0,	0,	0,	0,	0	],	# vegnw     (gN/m2)
+      'Root':	   [	0.1125,	0.16875,	0,	0,	0,	0,	0,	0,	0,	0	],	# vegnr     (gN/m2)
+  },													
+'MossDeathC':			4.68646875,	 #dmossc											
+    'CarbonShallow':		23893.48875,	 #shlwc											
+    'CarbonDeep':		21677.6878125,	# deepc											
+    'CarbonMineralSum':		26311.5271875,	# minec											
+    'OrganicNitrogenSum':	7445.77125,	# soln											
+    'AvailableNitrogenSum':	0.4122135,	# avln		
+},									
   ## WARNING: JUNK, PLACEHOLDER VALUES! USE AT YOUR OWN RISK!
   "maritime forest": {
     'cmtnumber': 8,
