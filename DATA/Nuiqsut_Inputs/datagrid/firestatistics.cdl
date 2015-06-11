@@ -1,0 +1,27 @@
+netcdf firestatistics {
+dimensions:
+	GFIREID = UNLIMITED ; // (1 currently)
+	GFSIZENO = 5 ;
+	GFSEASONNO = 4 ;
+variables:
+	int PFSIZE(GFIREID, GFSIZENO) ;
+	int PSFSEASON(GFIREID, GFSEASONNO) ;
+	int FRI ;
+	int GFIREID(GFIREID) ;
+		GFIREID:long_name = "GFIREID" ;
+	int PFSEASON(GFIREID, GFSEASONNO) ;
+data:
+
+ PFSIZE =
+  1, 1, 1, 1, 1 ;
+
+ PSFSEASON =
+  1, 1, 1, 1 ;
+
+ FRI = 500 ;
+
+ GFIREID = 195 ;
+
+ PFSEASON =
+  0, 0, 0, 0 ;
+}

@@ -1,0 +1,25 @@
+netcdf cohortid {
+dimensions:
+	CHTID = UNLIMITED ; // (1 currently)
+variables:
+	int VEGID ;
+	int CLMID ;
+	int CHTID(CHTID) ;
+		CHTID:long_name = "CHTID" ;
+	int INITCHTID(CHTID) ;
+	int GRIDID(CHTID) ;
+	int FIREID(CHTID) ;
+data:
+
+ VEGID = 8 ;
+
+ CLMID = 840423 ;
+
+ CHTID = 1 ;
+
+ INITCHTID = 1 ;
+
+ GRIDID = 1 ;
+
+ FIREID = 1 ;
+}

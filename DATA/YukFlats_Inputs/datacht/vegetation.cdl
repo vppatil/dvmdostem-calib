@@ -1,0 +1,48 @@
+netcdf vegetation {
+dimensions:
+	VEGID = UNLIMITED ; // (7 currently)
+	VEGSET = 1 ;
+variables:
+	int VEGID(VEGID) ;
+	float VEGFRAC(VEGID, VEGSET) ;
+	int VEGSETYR(VEGID, VEGSET) ;
+	int VEGTYPE(VEGID, VEGSET) ;
+
+// global attributes:
+		:history = "Wed Aug 13 12:12:40 2014: ncks -x -v VEGID veg_saved2.nc veg_saved3.nc\n",
+			"Wed Aug 13 12:08:16 2014: ncks -x -v VEGID veg_saved2.nc veg_saved2.nc" ;
+		:NCO = "4.2.1" ;
+data:
+
+ VEGID = 1, 2, 3, 4, 5, 6, 7, 8 ;
+
+ VEGFRAC =
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1 ;
+
+ VEGSETYR =
+  -9999,
+  -9999,
+  -9999,
+  -9999,
+  -9999,
+  -9999,
+  -9999,
+  -9999 ;
+
+ VEGTYPE =
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7 ;
+}
