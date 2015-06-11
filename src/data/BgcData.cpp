@@ -180,7 +180,6 @@ void BgcData::veg_endOfYear() {
 }
 
 void BgcData::soil_beginOfMonth() {
-  /*
     for(int il=0; il<MAX_SOI_LAY; il++){
       m_sois.rawc[il] = 0.;
       m_sois.soma[il] = 0.;
@@ -197,7 +196,6 @@ void BgcData::soil_beginOfMonth() {
         m_soi2a.rhsomcr[il]= 0.;
 
     }
-  */
 };
 
 void BgcData::soil_beginOfYear() {

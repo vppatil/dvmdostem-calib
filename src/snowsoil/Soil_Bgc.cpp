@@ -43,6 +43,8 @@ void Soil_Bgc::assignCarbonBd2LayerMonthly() {
       currl->soma  =  bd->m_sois.soma[currl->solind-1];
       currl->sompr =  bd->m_sois.sompr[currl->solind-1];
       currl->somcr =  bd->m_sois.somcr[currl->solind-1];
+     // currl->avln =  bd->m_sois.avln[currl->solind-1];
+     // currl->orgn = bd->m_sois.orgn[currl->solind-1];
     } else {
       break;
     }
@@ -51,6 +53,7 @@ void Soil_Bgc::assignCarbonBd2LayerMonthly() {
   }
 
   ground->moss.dmossc = bd->m_sois.dmossc;
+  //ground->moss.dmossn = bd->m_sois.dmossn;
   ground->organic.shlwc = bd->m_soid.shlwc;
   ground->organic.deepc = bd->m_soid.deepc;
 };
@@ -66,6 +69,8 @@ void Soil_Bgc::assignCarbonLayer2BdMonthly() {
       bd->m_sois.soma[currl->solind-1] = currl->soma;
       bd->m_sois.sompr[currl->solind-1]= currl->sompr;
       bd->m_sois.somcr[currl->solind-1]= currl->somcr;
+    //  bd->m_sois.orgn[currl->solind-1]=currl->orgn;
+     // bd->m_sois.avln[currl->solind-1]=currl->avln;
     } else {
       break;
     }
@@ -78,9 +83,12 @@ void Soil_Bgc::assignCarbonLayer2BdMonthly() {
     bd->m_sois.soma[il]=0.;
     bd->m_sois.sompr[il]=0.;
     bd->m_sois.somcr[il]=0.;
+    //bd->m_sois.avln[il]=0.;
+    //bd->m_sois.orgn[il]=0.;
   }
 
   bd->m_sois.dmossc = ground->moss.dmossc;
+  //bd->m_sois.dmossn = ground->moss.dmossn;
 };
 
 void Soil_Bgc::prepareIntegration(const bool &mdnfeedback,
