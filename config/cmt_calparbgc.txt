@@ -162,23 +162,24 @@ CMT06 // Wet Sedge Tundra - (max. 10 PFTs over 1 soil column) (BGC) plant calibr
 //===========================================================
 CMT07 // Grass Sedge Fen Yuk Flats calibrated parameters										
 //Sedges	   Forbs	     Lichens	  Feather	pft4	pft5	pft6	pft7	pft8	pft9	   // names: comments
-900	80	1000	300	0.00	0.00	0.00	0.00	0.00	0.00	   // cmax:
-1	0.97	0.12	0.41	0.00	0.00	0.00	0.00	0.00	0.00	   // nmax:
-0.0005	0.000083	0.008	0.015	0.00	0.00	0.00	0.00	0.00	0.00	   // cfall(0): leave
+650	65	1000	300	0.00	0.00	0.00	0.00	0.00	0.00	   // cmax:
+10	3	0.12	0.41	0.00	0.00	0.00	0.00	0.00	0.00	   // nmax:
+0.005	0.083	0.008	0.015	0.00	0.00	0.00	0.00	0.00	0.00	   // cfall(0): leave
 0	0	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // cfall(1): stem
-0.03	0.003	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // cfall(2): root
-0.001	0.042	0.007	0.004	0.00	0.00	0.00	0.00	0.00	0.00	   // nfall(0): leave
+0.03	0.087	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // cfall(2): root
+0.005	0.042	0.007	0.004	0.00	0.00	0.00	0.00	0.00	0.00	   // nfall(0): leave
 0	0	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // nfall(1): stem
-0.04	0.042	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // nfall(2): root
--0.0000806	-0.0000806	-0.000081	-0.0000806	0.00	0.00	0.00	0.00	0.00	0.00	   // kra:    coeff(0) in maintenance resp.
--1	-0.2	-2.4	-2.12	0.00	0.00	0.00	0.00	0.00	0.00	   // krb(0): coeff(1) in maintenance resp.(leave)
-0	0	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // krb(1): coeff(1) in maintenance resp.(stem)
--1	-1	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // krb(2): coeff(1) in maintenance resp.(root)
+0.01	0.042	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // nfall(2): root
+-0.000081	-8.06	-0.000081	-8.06	0.00	0.00	0.00	0.00	0.00	0.00	   // kra:    coeff(0) in maintenance resp.
+-1	-7.5	-2.4	-2.12	0.00	0.00	0.00	0.00	0.00	0.00	   // krb(0): coeff(1) in maintenance resp.(leave)
+0	-3.9	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // krb(1): coeff(1) in maintenance resp.(stem)
+-1.6	-1	0	0	0.00	0.00	0.00	0.00	0.00	0.00	   // krb(2): coeff(1) in maintenance resp.(root)
 0.2	0.2	0.2	0.2	0.00	0.00	0.00	0.00	0.00	0.00	   // frg: fraction of available NPP (GPP after rm) for growth resp.
 // soil calibrated parameters				
-2.0		// micbnup: parameter for soil microbial immobialization of N			
+2.7253		// micbnup: parameter for soil microbial immobialization of N			
 0.0057042	// kdcmoss	kdcmoss:	dead	moss
 0.0507042	// kdcrawc: raw-material (litter) C decompositin rates at reference condition			
 0.0108046	// kdcsoma:			
 0.0020805	// kdcsompr:			
 0.0000108	// kdcsomcr:
+
