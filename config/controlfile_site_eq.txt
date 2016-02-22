@@ -14,7 +14,7 @@
   },
 
   "stage_settings": {
-    "run_stage": "tr",          // Must be "eq","sp","tr","sc", or "all"
+    "run_stage": "eq",          // Must be "eq","sp","tr","sc", or "all"
     "restart_mode": "restart",
     "restart_file": "DATA/YukFlats_Inputs/output/restart-eq.nc"
   },

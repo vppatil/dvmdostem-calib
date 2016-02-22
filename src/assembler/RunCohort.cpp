@@ -355,18 +355,12 @@ void RunCohort::choose_run_stage_settings() {
   }
 
   if(cht.md->runsp) {
-    cht.timer->stageyrind = 0;
-    cht.timer->eqend = true;
-    used_atmyr = fmin(MAX_ATM_NOM_YR, cht.cd.act_atm_drv_yr);
-    yrstart = cht.timer->spbegyr;
-    yrend   = cht.timer->spendyr;
-    //md->set_friderived(false);
-    run_timeseries(calcontroller_ptr);
+
     if (calcontroller_ptr) {
       BOOST_LOG_SEV(glg, info) << "Pausing. Please check that the 'pre-run' "
                                << "data looks good.";
       
-      calcontroller_ptr->pause();
+ //     calcontroller_ptr->pause();
 
       calcontroller_ptr->clear_and_create_json_storage();
 
@@ -397,21 +391,24 @@ void RunCohort::choose_run_stage_settings() {
       md->set_dvmmodule(true);
       md->set_friderived(false);
     }
+
+    cht.timer->stageyrind = 0;
+    cht.timer->eqend = true;
+    used_atmyr = fmin(MAX_ATM_NOM_YR, cht.cd.act_atm_drv_yr);
+    yrstart = cht.timer->spbegyr;
+    yrend   = cht.timer->spendyr;
+    //md->set_friderived(false);
+
+    run_timeseries(calcontroller_ptr);
   }
 
   if(cht.md->runtr) {
-    cht.timer->stageyrind = 0;
-    cht.timer->eqend = true;
-    cht.timer->spend = true;
-    used_atmyr = cht.cd.act_atm_drv_yr;
-    yrstart = cht.timer->trbegyr;
-    yrend   = cht.timer->trendyr;
-    run_timeseries(calcontroller_ptr);
-    if (calcontroller_ptr) {
+
+      if (calcontroller_ptr) {
       BOOST_LOG_SEV(glg, info) << "Pausing. Please check that the 'pre-run' "
                                << "data looks good.";
       
-      calcontroller_ptr->pause();
+//      calcontroller_ptr->pause();
 
       calcontroller_ptr->clear_and_create_json_storage();
       BOOST_LOG_SEV(glg, info) << "Transient stage. CALIBRATION MODE!";
@@ -438,22 +435,24 @@ void RunCohort::choose_run_stage_settings() {
       md->set_dvmmodule(true);
       md->set_friderived(false);
     }
+
+      cht.timer->stageyrind = 0;
+      cht.timer->eqend = true;
+      cht.timer->spend = true;
+      used_atmyr = cht.cd.act_atm_drv_yr;
+      yrstart = cht.timer->trbegyr;
+      yrend   = cht.timer->trendyr;
+      run_timeseries(calcontroller_ptr);
+
   }
 
   if(cht.md->runsc) {
-    cht.timer->stageyrind = 0;
-    cht.timer->eqend = true;
-    cht.timer->spend = true;
-    cht.timer->trend = true;
-    used_atmyr = cht.cd.act_atm_drv_yr;
-    yrstart = cht.timer->scbegyr;
-    yrend   = cht.timer->scendyr;
-    run_timeseries(calcontroller_ptr);
-    if (calcontroller_ptr) {
+
+      if (calcontroller_ptr) {
       BOOST_LOG_SEV(glg, info) << "Pausing. Please check that the 'pre-run' "
                                << "data looks good.";
       
-      calcontroller_ptr->pause();
+      //calcontroller_ptr->pause();
 
       calcontroller_ptr->clear_and_create_json_storage();
       BOOST_LOG_SEV(glg, info) << "Scenario stage. CALIBRATION MODE!";
@@ -480,6 +479,17 @@ void RunCohort::choose_run_stage_settings() {
       md->set_dvmmodule(true);
       md->set_friderived(false);
     }
+
+      cht.timer->stageyrind = 0;
+      cht.timer->eqend = true;
+      cht.timer->spend = true;
+      cht.timer->trend = true;
+      used_atmyr = cht.cd.act_atm_drv_yr;
+      yrstart = cht.timer->scbegyr;
+      yrend   = cht.timer->scendyr;
+
+      run_timeseries(calcontroller_ptr);
+
   }
 
   //'restart.nc' always output at the end of run-time
