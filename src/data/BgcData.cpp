@@ -291,6 +291,12 @@ void BgcData::soil_endOfMonth() {
       mlind ++;
     }
 
+       if(il>(cd->m_soil.numsl-1)) //vp attempt to fix orgnsum zeroing out.
+       {
+           m_sois.orgn[il]=fmax(m_sois.orgn[il],0.0);
+           m_sois.avln[il]=0.0;
+       }
+
     m_soid.rawcsum += m_sois.rawc[il];
     m_soid.somasum += m_sois.soma[il];
     m_soid.somprsum+= m_sois.sompr[il];

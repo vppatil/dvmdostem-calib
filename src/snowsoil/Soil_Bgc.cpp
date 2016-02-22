@@ -200,7 +200,7 @@ void Soil_Bgc::initializeState() {
   //initial N based on input total and SOM C profile
   double sumtotc = shlwc+deepc+minec;
   //initial available N based only on organic SOM C total
-  double sumorgc = shlwc+minec;
+  double sumorgc = shlwc+deepc; //this might not matter, but it was summing total orgc as shlw + mineral vp 2/22/2016
 
   for (int il=0; il<MAX_SOI_LAY; il++ ) {
     double totc = bd->m_sois.rawc[il]+bd->m_sois.soma[il]
