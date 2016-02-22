@@ -118,12 +118,12 @@ CMT05 // Tussock Tundra  - soil microbial activity (BGC) parameters and default 
 29.73             // nmincnsoil:
 0.2               // propftos:
 0.0               // fnloss:  fraction N leaching (0 - 1) when drainage occurs
-1000.0               // initdmossc:
-6607            // initshlwc:
-10529.5            // initdeepc:
-276758.5              // initminec:
-8444.2               // initsoln:
-1.71              // initavln:
+1000.0            // initdmossc:
+3119               // initshlwc:
+3519             // initdeepc:
+28700              // initminec:
+2335              // initsoln:
+14.5             // initavln:
 //===========================================================
 CMT06 // CMT6 TEM Community  - soil microbial activity (BGC) parameters and default initial conditions
 2.0               // rhq10:

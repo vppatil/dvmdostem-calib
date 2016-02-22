@@ -306,7 +306,7 @@ void RunCohort::choose_run_stage_settings() {
       BOOST_LOG_SEV(glg, info) << "Pausing. Please check that the 'pre-run' "
                                << "data looks good.";
       
-      calcontroller_ptr->pause();
+   //   calcontroller_ptr->pause();
 
       calcontroller_ptr->clear_and_create_json_storage();
 
