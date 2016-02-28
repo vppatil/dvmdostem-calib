@@ -26,7 +26,7 @@ const int MAX_VEG_SET = 15; // maximum number of vegetation datasets
 //YUAN: moving the constants in Timer here
 const int MIN_EQ_YR = 500; // minimum number of years for equilibrium run
 const int MAX_EQ_YR = 500; // maximum number of years for equilibrium run
-const int MAX_SP_YR = 1900; // maximum number of years of spinup run;
+const int MAX_SP_YR = 500; // maximum number of years of spinup run;
 
 const int BEG_TR_YR = 1901;
 const int END_TR_YR = 2009;

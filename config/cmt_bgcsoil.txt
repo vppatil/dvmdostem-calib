@@ -118,12 +118,12 @@ CMT05 // Tussock Tundra  - soil microbial activity (BGC) parameters and default 
 29.73             // nmincnsoil:
 0.2               // propftos:
 0.0               // fnloss:  fraction N leaching (0 - 1) when drainage occurs
-1000.0            // initdmossc:
-3119               // initshlwc:
-3519             // initdeepc:
-28700              // initminec:
-2335              // initsoln:
-14.5             // initavln:
+385.4930392       // initdmossc:
+4914.478439       // initshlwc:
+3470.901485       // initdeepc:
+10494.43533       // initminec:
+6452.069682       // initsoln:
+2.335000000       // initavln:
 //===========================================================
 CMT06 // CMT6 TEM Community  - soil microbial activity (BGC) parameters and default initial conditions
 2.0               // rhq10:
@@ -146,7 +146,7 @@ CMT06 // CMT6 TEM Community  - soil microbial activity (BGC) parameters and defa
 3630               // initsoln:
 0.76              // initavln:
 //=====================================================================
-CMT07 // CMT7 TEM Community GS Fen YukFlats - soil microbial activity (BGC) parameters and default initial 
+CMT07 // CMT7 TEM Community GS Fen YukFlats - soil microbial activity (BGC) parameters and default initial
 2	          // rhq10:
 0	          // moistmin:
 0.5	          // moistopt:
@@ -166,4 +166,4 @@ CMT07 // CMT7 TEM Community GS Fen YukFlats - soil microbial activity (BGC) para
 28065.629	              // initminec:
 7942.156	             // initsoln:
 0.4396944	          // initavln:
-
+ 
