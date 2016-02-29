@@ -504,7 +504,9 @@ void Soil_Env::updateDailySM() {
   // 1) calculate the surface runoff and infiltration
   ed->d_soi2l.qover  = 0.;
   ed->d_soi2l.qdrain = 0.;
-  ed->d_sois.watertab = getWaterTable(lstsoill);
+
+  double ald = ed->d_soid.ald;
+  ed->d_sois.watertab = getWaterTable(lstsoill,ald);
 
   if(rnth+melt>0) {
     ed->d_soi2l.qover  = getRunoff(fstsoill, drainl, rnth, melt); //mm/day
@@ -619,7 +621,10 @@ double Soil_Env::getEvaporation(const double & dayl, const double &rad) {
 // modified to set that from the bottom soil layer
 // this will eliminate the 'fake watertable' due to temporary water
 // saturation of upper
-double Soil_Env::getWaterTable(Layer* lstsoill) {
+double Soil_Env::getWaterTable(Layer* lstsoill,double ald) {
+
+  double totthick = cd->d_soil.totthick;
+
   Layer* currl = lstsoill;
   double wtd=0;
   double s, dz, por;
@@ -627,6 +632,7 @@ double Soil_Env::getWaterTable(Layer* lstsoill) {
   bool bottomsat = true;   //Yuan: initialize the bottom layer as saturated
   double sums=0.;
   double ztot=0.;
+  double depth=0.;
 
   while (currl!=NULL) {
     if(!currl->isRock) {
@@ -638,9 +644,11 @@ double Soil_Env::getWaterTable(Layer* lstsoill) {
       thetal = currl->getVolLiq();
       thetal = fmin(por-thetai, thetal);
       s= thetal/(por-thetai);
+    //
+    depth=totthick-ztot; //this will be compared against ald.
 
-      if (bottomsat) {    //if bottom-layer saturated
-        if (s>0.999) {   //
+      if (bottomsat) {    //if bottom-layer saturated or deeper than ald
+        if (s>0.999 || depth >= ald) {   //keep adding the frozen zone to the 'water table'
           sums = ztot;
         } else {
           bottomsat = false;
