@@ -11,7 +11,7 @@ variables:
 	int FIREID(CHTID) ;
 data:
 
- VEGID = 6 ;
+ VEGID = 5 ;
 
  CLMID = 840423 ;
 

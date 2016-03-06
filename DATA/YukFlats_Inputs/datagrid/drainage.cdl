@@ -1,0 +1,13 @@
+netcdf drainage {
+dimensions:
+	DRAINAGEID = UNLIMITED ; // (1 currently)
+variables:
+	int DRAINAGEID(DRAINAGEID) ;
+		DRAINAGEID:long_name = "DRAINAGEID" ;
+	int DRAINAGETYPE(DRAINAGEID) ;
+data:
+
+ DRAINAGEID = 1 ;
+
+ DRAINAGETYPE = 1 ;
+}
