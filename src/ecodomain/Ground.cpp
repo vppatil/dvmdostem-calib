@@ -1966,8 +1966,45 @@ void Ground::checkWaterValidity() {
       currl->liq = 0.0;
     }
 
+    //fixing the error conditions with truncations- vp.
+    if(currl->ice < 0.0)
+    {
+         currl->ice = 0.0;
+    }
+
+    if(currl->liq < 0.0)
+    {
+         currl->liq = 0.0;
+    }
+
+    if(currl->frozen == 1)
+    {
+        if(currl->liq>0.0)
+        {
+            currl->liq=0.0;
+        }
+
+        if((currl->ice - currl->maxice) > 1.0e-3)
+        {
+            currl->ice = currl->maxice;
+        }
+    }
+
+    if(currl->frozen == -1)
+    {
+        if(currl->ice > 0.0)
+        {
+            currl->ice=0.0;
+        }
+
+        if((currl->liq-currl->maxliq)>1.0e-6 && currl->isSoil)
+        {
+            currl->liq = currl->maxliq;
+        }
+    }
+
     if (currl->ice < 0.0 || currl->liq < 0.0) {
-      BOOST_LOG_SEV(glg, err) << "Layer " << currl->indl
+        BOOST_LOG_SEV(glg, err) << "Layer " << currl->indl
                               << " shall NOT have negative ice or liq water!";
     }
 
@@ -2001,15 +2038,17 @@ void Ground::checkWaterValidity() {
       double maxwat = fmax(0.0, currl->maxliq-currl->getVolIce()*currl->dz*DENLIQ);
 
       if ((currl->liq-maxwat) > 1.e-6) {
-        BOOST_LOG_SEV(glg, err) << "Layer " << currl->indl << " (soil) "
-                                << "is partially unfrozen and shall NOT have too much liquid water!";
+          currl->liq=maxwat; //added truncation instead of error to this and the following if statement vp.
+        //BOOST_LOG_SEV(glg, err) << "Layer " << currl->indl << " (soil) "
+         //                       << "is partially unfrozen and shall NOT have too much liquid water!";
       }
 
       // adjust max. ice by liq occupied space
       maxwat = currl->maxice-currl->getVolLiq()*currl->dz*DENICE;
       if ((currl->ice-maxwat) > 1.e-6) {
-        BOOST_LOG_SEV(glg, err) << "Layer " << currl->indl << " (soil) "
-                                << "is partially frozen and shall NOT have too much ice water!";
+          currl->ice=maxwat;
+       // BOOST_LOG_SEV(glg, err) << "Layer " << currl->indl << " (soil) "
+         //                       << "is partially frozen and shall NOT have too much ice water!";
       }
     }
 

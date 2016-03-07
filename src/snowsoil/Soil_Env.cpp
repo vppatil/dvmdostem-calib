@@ -633,6 +633,11 @@ double Soil_Env::getWaterTable(Layer* lstsoill,double ald) {
   double sums=0.;
   double ztot=0.;
   double depth=0.;
+  double maxvolice=0;
+  double maxvolliq=0;
+  double satliq=0;
+  double maxwat=0;
+
 
   while (currl!=NULL) {
     if(!currl->isRock) {
@@ -645,6 +650,22 @@ double Soil_Env::getWaterTable(Layer* lstsoill,double ald) {
       thetal = fmin(por-thetai, thetal);
       s= thetal/(por-thetai);
     //
+
+      //lines below to forestall check water validity error.
+      //water correction for ice volume
+      maxwat=currl->maxliq - currl->getVolIce()*dz*DENLIQ;
+      if(currl->liq-maxwat > 1.e-3)
+      {
+          currl->liq=maxwat;
+      }
+
+      //ice correction.
+      maxwat=currl->maxice - currl->getVolLiq()*dz*DENICE;
+      if(currl->ice-maxwat > 1.e-3)
+      {
+          currl->ice=maxwat;
+      }
+
     depth=totthick-ztot; //this will be compared against ald.
 
       if (bottomsat) {    //if bottom-layer saturated or deeper than ald

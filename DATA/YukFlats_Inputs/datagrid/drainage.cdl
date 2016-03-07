@@ -9,5 +9,5 @@ data:
 
  DRAINAGEID = 1 ;
 
- DRAINAGETYPE = 1 ;
+ DRAINAGETYPE = 0 ;
 }
